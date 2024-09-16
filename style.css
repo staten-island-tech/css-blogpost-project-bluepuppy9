@@ -1,0 +1,142 @@
+body {
+    font-family: 'Slabo 27px';
+    margin: 0;
+    padding: 1em;
+    background: linear-gradient(to bottom right, #ff0066, #ff6600);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+    height: 100%;
+    width: 20em;
+    padding: 1em;
+    background-color: #ff6600;
+    border-radius: 1em;
+    background-attachment: fixed;
+}
+
+.post p {
+    display: none;    
+}
+
+.post:hover p {
+    display: block;
+}
+
+.post:hover img {
+    animation-name: imagegrow;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.post:not(:hover) img {
+    animation-name: imageshrink;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+.post:hover {
+    animation-name: post_select;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.post:not(:hover) {
+    animation-name: post_unselect;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 1em;
+    border: 3px solid black;
+}
+
+#title {
+    text-align: center;
+    font-size: 3em;
+    margin: 1em auto;
+    text-decoration:double underline;
+}
+.post-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+#me {
+    width: 3em;
+    height: 3em;
+    object-fit: cover;
+    position: absolute;
+    top: 0.5em;
+    left: 0.5em;
+    border: 3px solid #ff6600;
+    border-radius: 50%;
+    animation-name: icon_spin_in;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+p {
+    margin: 0;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 0;
+    margin-top: 1em;
+}
+
+@keyframes icon_spin_in {
+    0% {
+        scale: 0;
+    }
+    50% {
+        scale: 0.5;
+        left: 50vw;
+        top: 50vh;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+@keyframes post_select {
+    0% {
+    }
+    100% {
+        width: 50%;
+        padding: 3em;
+    }
+}
+
+@keyframes post_unselect {
+    0% {
+        width: 50%;
+        padding: 3em;
+    }
+    100% {
+    }
+}
